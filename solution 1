@@ -1,0 +1,26 @@
+create database school;
+create table school.students(
+student_id int primary key,
+student_name varchar(50),
+student_age int,
+student_major varchar(50)
+);
+insert into school.students values
+(1,"Sathya",18,"Biology"),
+(2,"Harini",15,"Maths_Biology"),
+(3,"Dharanya",20,"Computer science"),
+(4,"Kansiya",17,"Economics"),
+(5,"Sushmitha",19,"Computer science");
+
+select * from school.students;
+drop table school.students;
+
+
+SELECT * FROM school.students
+WHERE student_major LIKE "C%";
+
+SELECT max(student_age) from school.students;
+
+UPDATE school.students SET student_major="Computer science" WHERE student_id=1; 
+
+DELETE FROM school.students WHERE student_id=1;
